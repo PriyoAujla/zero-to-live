@@ -1,0 +1,20 @@
+apply plugin: 'application'
+
+project.archivesBaseName = 'yet-another-social-media-app'
+project.applicationName = 'yet-another-social-media-app'
+project.mainClassName = 'com.priyoaujla.Service'
+
+jar {
+    manifest {
+        attributes 'Main-Class': project.mainClassName
+        attributes 'Implementation-Title': 'Yet Another Social Media App'
+        attributes 'Implementation-Version': project.version
+        attributes 'Implementation-Vendor': 'Priyo Aujla'
+        attributes 'Implementation-Vendor-Id': 'com.priyoaujla'
+        attributes 'Built-On': new Date().format("yyyy-MM-dd hh:mm:ss")
+    }
+}
+
+dependencies {
+    testCompile libraries["junit"]
+}

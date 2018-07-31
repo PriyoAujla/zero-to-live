@@ -1,0 +1,3 @@
+rootProject.name = 'zero-to-live'
+include 'yet-another-social-media-app'
+
