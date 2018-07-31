@@ -2,20 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+
+        stage('check') {
             steps {
-                echo 'Building..'
+                dir('yet-another-social-media-app') {
+                    sh('check.sh')
+                }
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+
     }
 }
