@@ -2,12 +2,9 @@ pipeline {
     agent any
 
     stages {
-
-        stage('check') {
+        stage('build') {
             steps {
-                dir('yet-another-social-media-app') {
-                    sh('yet-another-social-media-app/ci.sh')
-                }
+                sh('yet-another-social-media-app/ci.sh')
             }
         }
 
