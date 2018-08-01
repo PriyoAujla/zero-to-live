@@ -1,10 +1,8 @@
 #!/bin/bash
 
 APP="yet-another-social-media-app"
+sudo docker build -t $APP .
 
-docker run -v /var/run/docker.sock:/var/run/docker.sock \
-           -v $(which docker):$(which docker) \
-           -v $PARENT_DIR:/app \
-           -v $USER_GRADLE:/root/.gradle \
+sudo docker run -v $HOST_PROJECT_PATH/jenkins/home/jobs/$APP/workspace:/app \
            $APP \
            /bin/bash -c "cd $APP; ../gradlew --no-daemon build"
