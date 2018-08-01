@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                bash(chmod +x 'yet-another-social-media-app/ci.sh')
+                bash('chmod +x yet-another-social-media-app/ci.sh')
                 bash('yet-another-social-media-app/ci.sh')
             }
         }
