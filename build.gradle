@@ -1,7 +1,11 @@
 buildscript {
     ext.junit_version = '4.12'
+    ext.http4k_version = '3.34.0'
     ext.libraries = [
-            "junit"                         : "junit:junit:$junit_version"
+            "junit" : "junit:junit:$junit_version",
+            "http4k": "org.http4k:http4k-core:$http4k_version",
+            "http4k-jetty": "org.http4k:http4k-server-jetty:$http4k_version"
+
     ]
 }
 

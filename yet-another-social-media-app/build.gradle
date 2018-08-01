@@ -16,5 +16,8 @@ jar {
 }
 
 dependencies {
+    compile libraries["http4k"]
+    compile libraries["http4k-jetty"]
+
     testCompile libraries["junit"]
 }
