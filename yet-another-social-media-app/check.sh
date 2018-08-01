@@ -1,7 +1,8 @@
 #!/bin/bash
 
+SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 APP="yet-another-social-media-app"
-docker build -t $APP .
+docker build -t $APP $SCRIPT_PATH
 
 PARENT_DIR="$(dirname "$(pwd)")"
 USER_GRADLE=~/.gradle
