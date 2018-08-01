@@ -42,6 +42,6 @@ Episode 1.1 - "But it built on my machine"
 
 We need to have a build server, this is important for a multitude of reasons but will only list what I feel to be the most important for this blog series below:
 
-1. Your code will be executed on a consistent environment which itself gives you confidence about the likely hood of the code working against the target environment (the server you want to put the app on)
+1. Your code will be executed on a consistent environment which itself gives you confidence about the likely hood of the code working against the target environment (However docker largely negates this advantage now)
 2. Sometimes you couldn't be bothered to do a whole build and checked in some dodgy bit of code that fails a test.
 3. You should never ever deploy a server with mouse clicks and keyboard tapping on some UI interface, our build server is where the code gets pushed from to it's target environment. 

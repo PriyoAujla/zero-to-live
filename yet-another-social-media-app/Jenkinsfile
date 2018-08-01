@@ -6,7 +6,7 @@ pipeline {
         stage('check') {
             steps {
                 dir('yet-another-social-media-app') {
-                    sh('check.sh')
+                    sh('yet-another-social-media-app/ci.sh')
                 }
             }
         }
