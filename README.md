@@ -38,7 +38,7 @@ To run the gradle command check in docker all we have to do is execute te bash s
 
 We also have our Dockerfile next to check.sh and this ensures we get a container that can run the gradle check command, so it has for example Java 8 installed.
 
-Episode 1.1 - "But it built on my machine"
+Episode 1.1 - "It works on my machine"
 
 We need to have a build server, this is important for a multitude of reasons but will only list what I feel to be the most important for this blog series below:
 
