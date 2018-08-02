@@ -16,4 +16,5 @@ docker run -p 8080:8080 \
            -v $PARENT_DIR/jenkins/home:/var/jenkins_home \
            -v $PARENT_DIR/$PROJECT:/job/$PROJECT \
            -e HOST_PROJECT_PATH=$PARENT_DIR \
+           -e HEROKU_API_KEY=$HEROKU_API_KEY \
             local-jenkins

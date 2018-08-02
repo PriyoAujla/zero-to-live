@@ -2,7 +2,7 @@ apply plugin: 'application'
 
 project.archivesBaseName = 'yet-another-social-media-app'
 project.applicationName = 'yet-another-social-media-app'
-project.mainClassName = 'com.priyoaujla.Service'
+project.mainClassName = 'com.priyoaujla.app.Service'
 
 jar {
     manifest {
@@ -13,6 +13,8 @@ jar {
         attributes 'Implementation-Vendor-Id': 'com.priyoaujla'
         attributes 'Built-On': new Date().format("yyyy-MM-dd hh:mm:ss")
     }
+
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
 dependencies {
