@@ -3,16 +3,20 @@ pipeline {
 
     stages {
         stage('build') {
-            dir('yet-another-social-media-app') {
-                sh('chmod +x ci.sh')
-                sh('ci.sh')
+            steps {
+                dir('yet-another-social-media-app') {
+                    sh('chmod +x ci.sh')
+                    sh('ci.sh')
+                }
             }
         }
         stage('deploy') {
-            dir('yet-another-social-media-app') {
-                //  using '|| true' so that if the app already exists don't return exit code 1 but code 0
-                sh('heroku create yet-another-social-media-app --no-remote || true')
-                sh('heroku deploy:jar target/libs/yet-another-social-media-app.jar --app yet-another-social-media-app')
+            steps {
+                dir('yet-another-social-media-app') {
+                    //  using '|| true' so that if the app already exists don't return exit code 1 but code 0
+                    sh('heroku create yet-another-social-media-app --no-remote || true')
+                    sh('heroku deploy:jar target/libs/yet-another-social-media-app.jar --app yet-another-social-media-app')
+                }
             }
         }
 
