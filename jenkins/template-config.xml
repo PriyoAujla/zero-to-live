@@ -9,7 +9,7 @@
     <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
       <triggers>
         <hudson.triggers.SCMTrigger>
-          <spec>H/5 * * * *</spec>
+          <spec>H/1 * * * *</spec>
           <ignorePostCommitHooks>false</ignorePostCommitHooks>
         </hudson.triggers.SCMTrigger>
       </triggers>
@@ -32,7 +32,7 @@
       <submoduleCfg class="list"/>
       <extensions>
         <hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
-          <relativeTargetDir>yet-another-social-media-app</relativeTargetDir>
+          <relativeTargetDir>MODULEPATH</relativeTargetDir>
         </hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
       </extensions>
     </scm>
