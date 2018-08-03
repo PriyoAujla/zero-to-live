@@ -4,8 +4,8 @@ buildscript {
     ext.libraries = [
             "junit" : "junit:junit:$junit_version",
             "http4k": "org.http4k:http4k-core:$http4k_version",
-            "http4k-jetty": "org.http4k:http4k-server-jetty:$http4k_version"
-
+            "http4k-jetty": "org.http4k:http4k-server-jetty:$http4k_version",
+            "konfig": 'com.natpryce:konfig:1.6.10.0'
     ]
 }
 
