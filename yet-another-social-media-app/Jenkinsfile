@@ -1,7 +1,6 @@
 pipeline {
     agent any
 
-    static final appName = "yet-another-social-media-app"
     stages {
         stage('build') {
             steps {
