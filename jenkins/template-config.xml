@@ -30,7 +30,11 @@
       </branches>
       <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
       <submoduleCfg class="list"/>
-      <extensions/>
+      <extensions>
+        <hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+          <relativeTargetDir>yet-another-social-media-app</relativeTargetDir>
+        </hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+      </extensions>
     </scm>
     <scriptPath>MODULEPATH/Jenkinsfile</scriptPath>
     <lightweight>true</lightweight>
