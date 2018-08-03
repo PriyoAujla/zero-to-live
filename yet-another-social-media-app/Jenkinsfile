@@ -1,22 +1,22 @@
 pipeline {
+    environment {
+         APP_NAME = "yet-another-social-media-app"
+       }
+
     agent any
 
     stages {
         stage('build') {
             steps {
-                dir('yet-another-social-media-app') {
-                    sh('chmod +x ci.sh')
-                    sh('ci.sh')
-                }
+                sh('chmod +x $APP_NAME/ci.sh')
+                sh('$APP_NAME/ci.sh')
             }
         }
         stage('deploy') {
             steps {
-                dir('yet-another-social-media-app') {
-                    //  using '|| true' so that if the app already exists don't return exit code 1 but code 0
-                    sh('heroku create yet-another-social-media-app --no-remote || true')
-                    sh('heroku deploy:jar target/libs/yet-another-social-media-app.jar --app yet-another-social-media-app')
-                }
+                //  using '|| true' so that if the app already exists don't return exit code 1 but code 0
+                sh('heroku create $APP_NAME --no-remote || true')
+                sh('cd $APP_NAME && heroku deploy:jar target/libs/$APP_NAME.jar --app $APP_NAME')
             }
         }
 
