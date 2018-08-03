@@ -14,6 +14,7 @@ jar {
         attributes 'Built-On': new Date().format("yyyy-MM-dd hh:mm:ss")
     }
 
+    version = null // for ease of deployment remove version in jar name
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 

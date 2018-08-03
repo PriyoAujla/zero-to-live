@@ -1,11 +1,19 @@
 pipeline {
     agent any
 
+    static final appName = "yet-another-social-media-app"
     stages {
         stage('build') {
             steps {
                 sh('chmod +x yet-another-social-media-app/ci.sh')
                 sh('yet-another-social-media-app/ci.sh')
+            }
+        }
+        stage('Deploy') {
+            steps {
+                //  using '|| true' so that if the app already exists don't return exit code 1 but code 0
+                sh('heroku create yet-another-social-media-app --no-remote || true')
+                sh('heroku deploy:jar target/yet-another-social-media-app.jar --app yet-another-social-media-app')
             }
         }
 
