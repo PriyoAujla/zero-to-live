@@ -22,7 +22,7 @@ object keys {
 
 fun main(args: Array<String>) {
     val app = routes(
-            "/" bind Method.GET to { Response(Status.OK).body("The app is up and running") }
+            "/" bind Method.GET to { Response(Status.OK).body("This site is a work in progress!") }
     )
 
     app.asServer(Jetty(config[keys.server.port])).start()
